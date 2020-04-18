@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import {store} from './store'
 import {Converter} from "./components"
-import "./styles/style.css"
+import "./components/Converter/styles/style.css"
 
 const App = () => (
   <Provider store={store}>
