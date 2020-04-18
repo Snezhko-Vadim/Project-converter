@@ -1,0 +1,1 @@
+export {BtnBuys} from "./BtnBuys"

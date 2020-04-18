@@ -1,0 +1,115 @@
+.converter{
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #bedbc2;
+}
+.body{
+    padding:20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btnsBuysSellsNotActive{
+    cursor: pointer;
+    font-size: 14px;
+    color:#2aa73a;
+    background-color:white ;
+    border: none;
+    outline:none;
+    padding:10px 35px;
+}
+.btnsBuysSellsActive{
+    cursor: pointer;
+    font-size: 14px;
+    color:white;
+    background-color:#2aa73a;
+    border: none;
+    outline:none;
+    padding:10px 35px;
+}
+.header{
+    position: relative;
+}
+.header>button{
+    width: 50%;
+    transition-property:background-color;
+    transition-duration:250ms;
+}
+.header>button:hover{
+    background-color:#6fbb78;
+    color: white;
+}
+.header>button:first-child:after{
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #2aa73a;
+    bottom: 0;
+    left: 0%;
+    right: 0%;
+}
+.listOfCurrencies{
+    padding:0;
+    list-style-type:none;
+    margin-top: 0;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction:column;
+}
+.itemOfCurrenciesList{
+    padding-top:10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.itemOfCurrenciesList>input{
+    padding: 5px 9px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-left:10px;
+    margin-right:5px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+.btnClose{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .btnClose:before, .btnClose:after {
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 2px;
+    background-color: #8f8f8f;
+    }
+    .btnClose:before {
+    transform: rotate(45deg);
+    }
+    .btnClose:after {
+    transform: rotate(-45deg);
+    }
+    .btnClose:hover{
+        transform: scale(1.12);
+        transition-duration:200ms;
+    }
+
+    .selectorOfCurrency{
+        outline:none;
+        cursor: pointer;
+        width: 100%;
+        padding: 5px 9px;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+    .selectorOfCurrency>option:hover {
+        box-shadow: 0 0 10px 100px #6fbb78 inset;
+        }
