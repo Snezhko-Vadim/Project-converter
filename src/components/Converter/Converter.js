@@ -1,11 +1,7 @@
 import React from "react"
 import {Header,Body} from "./components"
 
-export class Converter extends React.Component{
-    constructor(){
-        super()
-    }
-    render(){
+export const Converter = () => {
         return(
             <div className="converter">
             <Header/>
@@ -13,4 +9,3 @@ export class Converter extends React.Component{
             </div>
         )
     }
-}

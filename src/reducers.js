@@ -35,7 +35,8 @@ export const converter = (state = {
     {name: "USD"},{name: "EUR"},{name: "RUB"},{name: "GBP"},{name: "CAD"},{name: "PLN"},{name: "UAH"},{name: "SEK"},
     {name: "CHF"},{name: "JPY"},{name: "CNY"}
   ],
-  initialDisplayedCurrencies: [{name: "BYR"},{name: "USD"},{name: "RUB"}
+  initialDisplayedCurrencies: [
+    {name: "BYR"},{name: "USD"},{name: "RUB"}
   ],
   coefficient: 0,
   sellsBuysSellector: "factorIn",
@@ -147,9 +148,9 @@ export const converter = (state = {
         }
 
         let calculatedInput=undefined;
-        const futureCoefficient = action.payload.changingValue * state.listOfDisplayedCurrencies.find((curr) => curr.id == action.payload.changingCurrencyId)[state.sellsBuysSellector];
+        const futureCoefficient = action.payload.changingValue * state.listOfDisplayedCurrencies.find((curr) => curr.id === action.payload.changingCurrencyId)[state.sellsBuysSellector];
         const listOfCurrWithUpdatedInputs = state.listOfDisplayedCurrencies.map(function (item) {
-          calculatedInput = (item.id==action.payload.changingCurrencyId) ? action.payload.changingValue
+          calculatedInput = (item.id===action.payload.changingCurrencyId) ? action.payload.changingValue
           :Number((futureCoefficient / item[state.sellsBuysSellector]).toFixed(4));
           return ({
             name: item.name,
@@ -168,8 +169,8 @@ export const converter = (state = {
         }
 
         case 'REMOVE_CURRENCY': {
-          const newListOfDisplayedCurrencies = state.listOfDisplayedCurrencies.filter((curr) => curr.id != action.payload);
-          const newCurrenciesInSelector = [...state.currenciesInSelector,state.listOfCurrencies.find((currency) => currency.id == action.payload)];
+          const newListOfDisplayedCurrencies = state.listOfDisplayedCurrencies.filter((curr) => curr.id !== action.payload);
+          const newCurrenciesInSelector = [...state.currenciesInSelector,state.listOfCurrencies.find((currency) => currency.id === action.payload)];
           return {
             ...state,
             currenciesInSelector: newCurrenciesInSelector,
@@ -178,9 +179,9 @@ export const converter = (state = {
         }
 
         case 'CHANGE_BUYS_SELLS': {
-          if(state.changingValue != undefined && state.changingCurrencyId != undefined){
+          if(state.changingValue !== undefined && state.changingCurrencyId !== undefined){
           const futureSellsBuysSellector = 'factor' + action.payload;
-          const futureCoefficient = state.changingValue * state.listOfCurrencies.find((curr) => curr.id == state.changingCurrencyId)[futureSellsBuysSellector];
+          const futureCoefficient = state.changingValue * state.listOfCurrencies.find((curr) => curr.id === state.changingCurrencyId)[futureSellsBuysSellector];
           const listOfCurrWithUpdatedInputs = state.listOfDisplayedCurrencies.map(function (item) {
             return ({
               name: item.name,
@@ -213,7 +214,7 @@ export const styles = (state = {
 }, action) => {
   switch (action.type) {
     case 'SET_ACTIVE_BTN':
-      const activeBtn = (action.payload=='In') ? "btnBuys" : "btnSells";
+      const activeBtn = (action.payload==='In') ? "btnBuys" : "btnSells";
       return{
         ...state,
         activeBtn:activeBtn,

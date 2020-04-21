@@ -40,13 +40,13 @@ export const addCurrency = (currencyId,optionWithActionName) => ({
 
 export const removeCurrency = (removingCurrencyId) => ({
   type: 'REMOVE_CURRENCY',
-  payload: removingCurrencyId,
+  payload: Number(removingCurrencyId),
 });
 
 export const changingCurrencyValue = (changingCurrencyId,changingValue) => ({
   type: 'CHANGING_CURRENCY_VALUE',
   payload: {
-    changingCurrencyId:changingCurrencyId ,
+    changingCurrencyId:Number(changingCurrencyId) ,
     changingValue:changingValue
   }
 });

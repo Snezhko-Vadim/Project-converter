@@ -5,7 +5,7 @@ import {changeBuysSells,setActiveBtn} from '../../../../../../actions'
 
 const BtnSellsComponent=(props)=>{
     let className = undefined;
-    if(props.activeBtn=="btnSells"){
+    if(props.activeBtn==="btnSells"){
        className="btnsBuysSellsActive";
     }
     else{
